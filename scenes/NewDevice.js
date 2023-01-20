@@ -23,28 +23,36 @@ const NewDevice = ({ visible, onClose }) => {
   return (
     <Modal animationType="slide" transparent={false} visible={visible}>
       <View>
-        <Text>Name:</Text>
+        <Text style={{marginTop: 40}}>Name:</Text>
         <TextInput
           value={name}
           onChangeText={setName}
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
         />
-        <Text>Room:</Text>
+        <Text style={{marginTop: 20}}>Room:</Text>
         <TextInput
           value={room}
           onChangeText={setRoom}
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
         />
-        <Text>Command:</Text>
+        <Text style={{marginTop: 20}}>Command:</Text>
         <TextInput
           value={command}
           onChangeText={setCommand}
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
         />
-        <Text>Color:</Text>
+        <Text style={{marginTop: 20}}>Color:</Text>
         <TextInput
           value={color}
           onChangeText={setColor}
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
         />
-        <Button title="Save" onPress={handleSave} />
-        <Button title="Cancel" onPress={onClose} />
+        <View style={{ width: 100, height: 150, justifyContent: 'center', marginLeft: 145}}>
+        <Button title="Save" onPress={handleSave}  color="#ff5c5c" />
+        <Button title="Cancel" onPress={onClose}  color="#1CDB68" />
+        </View>
+
+        
       </View>
     </Modal>
   );
