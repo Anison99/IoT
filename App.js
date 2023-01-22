@@ -5,7 +5,6 @@ import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal, An
 
 
 import Device from './scenes/Device.js';
-import NewDevice from './scenes/NewDevice';
 import Connection from './scenes/Connection';
 
 
