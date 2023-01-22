@@ -33,7 +33,7 @@ const Device = () => {
     <View style={{ flex: 1, alignItems: 'center', color: "#FFFFFF" }}>
 
         <View style={{marginBottom: 40, marginTop: 40}}>
-            <Button  title="+" onPress={() => setModalVisible(true)} style={{ width: 100, height: 200 }} color="#ff5c5c"/>
+            <Button  title="+ Dodaj urządzenie" onPress={() => setModalVisible(true)} style={{ width: 100, height: 200 }} color="#ff5c5c"/>
         </View>
 
         <Modal
@@ -46,35 +46,39 @@ const Device = () => {
         >
 
         <View>
-        <Text>Nazwa urządzenia</Text>
+        <Text style={{ fontSize: 20, fontWeight: 'bold',}}>Nazwa urządzenia</Text>
         <TextInput 
           placeholder="Wprowadź nazwę urządzenia" 
           onChangeText={(text) => setDeviceName(text)}
           value={deviceName}
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
         />
 
-        <Text>Nazwa pomieszczenia</Text>
+        <Text style={{ fontSize: 20, fontWeight: 'bold',}}>Nazwa pomieszczenia</Text>
         <TextInput 
           placeholder="Wprowadź nazwę pomieszczenia" 
           onChangeText={(text) => setRoomName(text)}
           value={roomName}
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
         />
 
-        <Text>Komenda</Text>
+        <Text style={{ fontSize: 20, fontWeight: 'bold',}}>Komenda</Text>
         <TextInput 
           placeholder="Wprowadź komendę" 
           onChangeText={(text) => setCommand(text)}
           value={command}
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
         />
 
-      <Text>Kolor</Text>
+      <Text style={{ fontSize: 20, fontWeight: 'bold',}}>Kolor</Text>
       <TextInput 
         placeholder="Wprowadź kolor"
         onChangeText={(text) => setColor(text)}
         value={color}
+        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
       />
 
-      <Button title={editingDevice ? "Zapisz zmiany" : "Dodaj urządzenie"} onPress={async () => {
+      <Button color='#17AA52' title={editingDevice ? "Zapisz zmiany" : "Dodaj urządzenie"} onPress={async () => {
         if (editingDevice) {
           const devices = await AsyncStorage.getItem('devices');
           let allDevices = JSON.parse(devices);
@@ -127,9 +131,11 @@ const Device = () => {
               setCommand(item.command);
               setColor(item.color);
             }}
+            color='#17AA52'
       
       />
       <Button
+        color="#ff5c5c"
         title="Usuń"
         onPress={() => {
           Alert.alert(
